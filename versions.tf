@@ -7,9 +7,10 @@ terraform {
     }
   }
 
-  # backend "azurerm" {
-  #   storage_account_name = "p00devtfstate"
-  #   container_name       = "tfstate"
-  #   key                  = "dev"
-  # }
+  backend "azurerm" {
+    resource_group_name  = "p00-dev-rg"
+    storage_account_name = "p00devtfstate"
+    container_name       = "terraform"
+    key                  = "dev"
+  }
 }

@@ -13,3 +13,13 @@ resource "azurerm_storage_account" "task" {
     environment = local.environment
   }
 }
+
+locals {
+  storage_account_container_name = "terraform"
+}
+
+resource "azurerm_storage_container" "task" {
+  name                  = local.storage_account_container_name
+  storage_account_id    = azurerm_storage_account.task.id
+  container_access_type = "private"
+}
