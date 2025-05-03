@@ -1,6 +1,6 @@
 data "azurerm_subscription" "current" {}
 
 provider "azurerm" {
-  subscription_id = data.azurerm_subscription.current
+  subscription_id = "d94fe338-52d8-4a44-acd4-4f8301adf2cf"
   features {}
 }
